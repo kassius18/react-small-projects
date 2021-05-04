@@ -1,0 +1,26 @@
+main {
+  background-color: white;
+  padding: 2rem;
+  margin-top: 5rem;
+  max-width: 450px;
+  width: 90vw;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.numberOfPeople {
+  margin-bottom: 2rem;
+}
+
+button {
+  display: block;
+  width: 100%;
+  background-color: #ff1cff;
+  border: 1px;
+  border-radius: 2px;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  padding: 0.5rem;
+}
