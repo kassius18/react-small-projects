@@ -1,4 +1,20 @@
+import {useState} from "react";
+
 function Tour({key, tour}){
+  const [isShowMore, setIsShowMore] = useState(true)
+  const [info, setInfo] = useState(tour.info)
+  console.log('initial state:',isShowMore)
+  const toggleShowMore = () =>{
+    setIsShowMore((prevValue) =>{return !prevValue})
+    console.log('actual', isShowMore)
+    if (isShowMore){
+      setInfo(tour.info.substring(0,200) + "...")
+    }else{
+      setInfo(tour.info)
+    }
+    console.log(info)
+  }
+
   return (
     <article className="tour">
       <img src={tour.image} alt=""/>
@@ -7,7 +23,7 @@ function Tour({key, tour}){
           {tour.name}
         </h5>
         <span className="tour-price">{tour.price}</span>
-        <p className="tour-info">{tour.info}</p>
+          <p className="tour-info">{info} <button onClick={toggleShowMore}>{isShowMore ? "Show less" : "Show more"}</button></p>
       </div>
       <button>Not interested</button>
     </article>
