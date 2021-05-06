@@ -1,0 +1,9 @@
+.person {
+  width: 30vw;
+}
+
+.person-image {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
