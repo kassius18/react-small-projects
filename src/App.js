@@ -11,18 +11,16 @@ function App() {
       async function fetchTours(){
       const response = await fetch(url);
       const data =  await response.json();
-      setIsLoading(false)
       setTours(data)
+      setIsLoading(false)
       }
       fetchTours()
-    },[])
+    },[isLoading])
+
+  const handleRefresh = ()=> setIsLoading(true)
 
     if (isLoading){return <h1>Loading...</h1>}
-
-  const test=[{id: 1,image: "randomImage", name: "Test", info: "test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test", price:"2"}]
-  // console.log(tours)
-    return <Tours tours={test}  />;
-    // return <Tours tours={tours}  />;
+    return <Tours tours={tours} onRefresh={handleRefresh} />;
   }
 
 
