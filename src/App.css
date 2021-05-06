@@ -1,0 +1,22 @@
+main {
+  max-width: 650px;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.page-title {
+  margin: 4rem auto;
+  text-align: center;
+  width: 100;
+  font-family: "Cantarell";
+  letter-spacing: 1.6;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.underline {
+  width: 6rem;
+  height: 4px;
+  background-color: teal;
+  margin: 0 auto;
+}

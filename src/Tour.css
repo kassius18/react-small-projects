@@ -1,0 +1,18 @@
+.tour {
+  max-width: 600px;
+}
+
+.tour-description {
+  position: relative;
+  box-sizing: border-box;
+  padding: 2rem 2rem 0rem 2rem;
+}
+
+.tour-price {
+  position: absolute;
+  right: 1rem;
+  width: 100;
+  margin-left: auto;
+  padding: 0 1rem;
+  border-radius: 2px;
+}

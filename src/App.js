@@ -20,7 +20,17 @@ function App() {
   const handleRefresh = ()=> setIsLoading(true)
 
     if (isLoading){return <h1>Loading...</h1>}
-    return <Tours tours={tours} onRefresh={handleRefresh} />;
+  return (
+    <main>
+      <section>
+        <div>
+          <h1 className="page-title">Our Tours
+          <div className="underline"></div>
+        </h1>
+          <Tours tours={tours} onRefresh={handleRefresh} />;
+        </div>
+      </section>
+      </main>)
   }
 
 
