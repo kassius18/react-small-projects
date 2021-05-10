@@ -1,3 +1,26 @@
+.carousel {
+  width: 30%;
+  margin: 0 auto;
+  /* overflow: hidden; */
+  border: 5px solid;
+  position: relative;
+}
+
 .person {
-  height: 50vh;
+  position: absolute;
+  background-color: green;
+  transition: all 0.3s linear;
+  opacity: 0;
+}
+
+.person.nextSlide {
+  transform: translateX(100%);
+}
+
+.person.prevSlide {
+  transform: translateX(-100%);
+}
+
+.person.active {
+  opacity: 1;
 }

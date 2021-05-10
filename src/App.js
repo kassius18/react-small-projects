@@ -1,39 +1,38 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import './App.css';
 import people from './data'
-import Person from './Person'
-
+import People from './People'
 
 function App() {
-  const [currentPersonId, setCurrentPersonId] = useState(1)
+  const [index, setIndex] = useState(1)
 
-  const handleToRight = ()=>{
-    if (people.length === currentPersonId){
-      setCurrentPersonId(1)
-    }
-    else{
-      setCurrentPersonId((oldValue) => oldValue + 1)
+  const increaseIndex = () => {
+    if (index >= people.length){
+      setIndex(1)
+    }else {
+      setIndex((oldValue)=>oldValue + 1)
     }
   }
-  const handleToLeft = ()=>{
-    if (1 === currentPersonId){
-      setCurrentPersonId(people.length)
-    }
-    else{
-      setCurrentPersonId((oldValue) => oldValue - 1)
+
+  const decreaseIndex = () => {
+    if (index <= 1){
+      setIndex(people.length)
+    }else {
+      setIndex((oldValue)=>oldValue - 1)
     }
   }
-  const handleRandom = ()=>{
-     let randomNumber = Math.floor((Math.random() * (people.length-1) + 1))
-    if (randomNumber >= currentPersonId) randomNumber++
-      setCurrentPersonId(randomNumber)
-  }
 
-
-  let person = people.find((person) => person.id === currentPersonId)
-  return (
-    <Person person={person} onLeft={handleToLeft} onRight={handleToRight} onRandom={handleRandom}/>
-  );
+return (
+  <>
+  <section className="carousel" >
+    <People people={people} activeIndex={index}/>
+    <div>
+      <button onClick={decreaseIndex} className="person-left">LEFT</button>
+      <button onClick={increaseIndex} className="person-right">RIGHT</button>
+    </div>
+  </section>
+  </>
+);
 }
 
 export default App;
