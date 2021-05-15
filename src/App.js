@@ -1,40 +1,28 @@
-import './App.scss';
-import logo from './logo.svg'
-import {links, social} from './data'
-import { MdClose } from "react-icons/md";
-import { GiHamburgerMenu } from "react-icons/gi";
 import {useState} from 'react';
+import Header from './Header'
+import sublinks from './data' 
+import phone from "./images/phone.svg"
+import "./App.scss"
 
 function App() {
-  const [showSidebar, setShowSidebar]  = useState(false)
-  const [showModal, setShowModal]  = useState(false)
   return (
     <>
-    <GiHamburgerMenu className="sidebar__hamburger" onClick={()=>{setShowSidebar(true)}}/>
-    <div className={showSidebar ? "sidebar sidebar--show" : "sidebar"}>
-      <div className="sidebar__top">
-      <img src={logo} alt="" className="sidebar__logo"/>
-      <MdClose onClick={()=>{setShowSidebar(false)}}/>
+    <Header sublinks={sublinks}/>
+    <main className={"hero"}>
+      <div className="hero__left">
+    <h1 className="hero__title">
+      Payments infrastructure
+for the internet
+    </h1>
+      <p className="hero__description">
+        Millions of companies of all sizes—from startups to Fortune 500s—use Stripe’s software and APIs to accept payments, send payouts, and manage their businesses online.
+      </p>
+      <button className="hero__btn">Start now</button>
       </div>
-      <div className="sidebar__nav">
-        {links.map((link) => {
-          return (<a key={link.id} className={"sidebar__${home}"} href={link.url}>{link.icon}<span>{link.text}</span></a>)
-        })}
+      <div className="hero__right">
+        <img src={phone} alt=""/>
       </div>
-      <div className="sidebar__social">
-        {social.map((singleSocial) => {
-          return (<a key={singleSocial.id} href={singleSocial.url}>{singleSocial.icon}</a>)
-        })}
-      </div>
-    </div>
-    <div className="modal-btn" onClick={()=>{setShowModal(true)}}>SHOW MODAL</div>
-    {showModal &&
-    <div className="modal">
-      <div className="modal__content">
-        <MdClose onClick={()=>{setShowSidebar(false)}}/>
-        <h2>Modal Content</h2>
-      </div>
-    </div>}
+    </main>
     </>
   );
 }

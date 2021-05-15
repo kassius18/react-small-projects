@@ -1,0 +1,54 @@
+.submenu {
+  position: absolute;
+  background-color: white;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  transform: translate(-50%, 100%);
+  padding: 2rem;
+  border-radius: 5px;
+  transition: left 1s ease-in-out;
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    content: "";
+    height: 0;
+    width: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    display: block;
+  }
+
+  &.hide {
+    visibility: hidden;
+  }
+
+  &__page {
+    text-transform: capitalize;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  &__links {
+    display: flex;
+    text-transform: capitalize;
+
+    & > a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 4rem;
+      text-decoration: none;
+      color: grey;
+
+      & > svg {
+        margin-right: 1rem;
+      }
+    }
+  }
+}

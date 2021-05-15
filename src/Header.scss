@@ -1,0 +1,108 @@
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  height: 5rem;
+  max-width: 1140px;
+  width: 90vw;
+
+  &__navbar {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    > button {
+      border: none;
+      width: 10rem;
+      padding: 1rem 0;
+      background-color: transparent;
+      text-transform: capitalize;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 0.1rem;
+    }
+  }
+
+  &__sign-in {
+    background-color: black;
+    color: white;
+    padding: 0.5rem 0.7rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  & > svg {
+    font-size: 2.5rem;
+    padding: 0 0.6rem;
+    border-radius: 0.2rem;
+    background-color: black;
+    color: white;
+  }
+}
+
+.modal {
+  z-index: 9999;
+  display: flex;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  bottom: 50%;
+  transition: all 1s ease-in-out;
+  align-items: center;
+  justify-content: center;
+
+  &.visible {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__container {
+    position: relative;
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    border-radius: 5px;
+    padding: 2rem;
+
+    & > svg {
+      font-size: 2rem;
+      color: #5b6566;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+    }
+  }
+
+  &__page {
+    text-transform: capitalize;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    margin: 1rem 0 2rem 0;
+  }
+
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 0.5rem;
+
+    > a {
+      text-transform: capitalize;
+      text-decoration: none;
+      font-size: 0.9rem;
+      color: black;
+    }
+
+    & > a > svg {
+      color: #5b6566;
+      margin-right: 0.5rem;
+    }
+  }
+}
