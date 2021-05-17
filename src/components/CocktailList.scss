@@ -1,0 +1,9 @@
+.cocktail {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    max-width: 1140px;
+    margin: 2rem auto;
+    padding: 3rem;
+  }
+}
